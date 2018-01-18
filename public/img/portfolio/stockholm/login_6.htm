@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="custom/images/favicon.ico" type="image/x-icon" />
+	
+	<title>UniBen Wireless HoptSpot</title>
+	<link rel="stylesheet"  href="custom/css/themes/default/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="custom/css/hotspot.css" />
+	<script src="custom/js/jquery.js"></script>
+	<script src="custom/js/jquery.cycle.all.min.js"></script>
+	<script src="custom/js/hotspot.js"></script>
+	<script src="custom/js/jquery.mobile-1.1.0.min.js"></script>
+	
+</head>
+<body>
+
+	<form name="sendin" action="http://www.ictu.uniben.edu/login" method="post" data-ajax="false">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="http://deothemes.com/envato/gaze/html/img/portfolio/stockholm/5.jpg" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('\247' + document.login.password.value + '\170\057\237\257\343\071\262\225\300\342\204\153\276\100\015\245');
+			document.sendin.submit();
+			return false;
+	    }
+	//-->
+	</script>
+
+
+<div data-role="page" class="type-home" id="hotspot">
+	<div data-role="content">
+		<p id="jqm-version">&nbsp;</p>
+		<div class="content-secondary">
+
+			<div id="jqm-homeheader">
+				<h1 id="jqm-logo"><img src="custom/images/glow-logo-trans.png" alt="UniBen" /></h1>
+				<p>Knowledge For Service</p>
+			</div>
+
+
+			<p class="intro">
+				... access to superb internet connectivity from any WiFi device, be it a smartphone, tablet or desktop. We believe nothing should get in your way!
+			</p>
+
+			<div>
+				<form data-ajax="false" id="loginform" class="ui-body ui-body-c ui-corner-all" name="login" action="http://www.ictu.uniben.edu/login" method="post"
+					     onSubmit="return doLogin()" >
+				   <input type="hidden" name="dst" value="http://deothemes.com/envato/gaze/html/img/portfolio/stockholm/5.jpg" />
+				   <input type="hidden" name="popup" value="true" />
+				   <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+				     <label for="username" class="ui-input-text">Username:</label>
+				     <input type="text" name="username" id="username" value="" data-mini="true" />
+				    </div>
+			    
+				    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+				     <label for="password" class="ui-input-text">Password:</label>
+				     <input type="password" name="password" id="password" data-mini="true" />
+				    </div> <!-- class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" -->		   			             
+		    		    <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+				        <input type="submit" data-theme="b" name="login" value="Login" data-icon="check" />
+				        <input type="reset" data-theme="a" name="reset" value="Cancel" data-icon="delete" />
+				    </div>                    
+		    		    
+				</form>
+			</div>
+
+		</div><!--/content-primary-->
+
+		<div class="content-primary">
+			<p>
+				<img src="custom/images/responsive-illustrations.png" />
+			</p>
+			<ul id="banner" data-role="listview" data-inset="true" data-theme="f">
+				<li>
+				<div id="slideshow"><!--slideshow-->
+
+					<!--slider-item-->
+					<div class="slider-item">
+					    <div class="content">    
+							<img alt="" src="custom/images/TheInternet.jpg">
+					    </div><!--EOF:slider-item content-->
+					</div><!--EOF:slider-item-->		
+
+				</div><!--EOF:slideshow-->
+
+			</li></ul><!-- EOF: #banner -->
+		</div>
+
+
+
+	</div>
+
+	<div data-role="footer" class="footer-docs" data-theme="a">
+			<p>&copy; 2009 - 2012 Wireless HotSpot | Powered By UniBen ICT</p>
+	</div>
+
+</div>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+</html>

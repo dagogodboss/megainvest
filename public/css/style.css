@@ -1,0 +1,257 @@
+body{
+	font-family: "Roboto", sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+  }
+.welcome-full-height {
+    height: 100vh;
+}
+button{
+	color: #fff !important;
+}
+.edit-plan{
+	color: #fff !important;
+}
+button:hover{
+	color: #fff;
+}
+.modal-content {
+	position: inherit;
+	width: inherit;
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+	outline: none;
+}
+.welcome-index{
+	z-index: 10000;
+	/*position:relative;*/
+}
+.welcome-flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.welcome-overlay{
+	top: 0px;
+	bottom: 0px;
+	position: absolute;
+	background: rgba(0,0,0,0.7);
+	left: 0px;
+	right: 0px;
+
+}
+.welcome-position-ref {
+    position: relative;
+    background: url('../images/home_bg.png');
+    background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+
+}
+
+.welcome-top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.welcome-content {
+    text-align: center;
+}
+
+.welcome-title {
+    font-size: 84px;
+}
+
+.welcome-links > a {
+    color: #fff;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.welcome-m-b-md {
+    margin-bottom: 30px;
+}
+.theme-color{
+	background-color: #673BB7 !important;
+}
+.mobile-logo{
+	width: 50%;
+	min-height: 167px;
+	background: #673bb7;
+	margin: auto;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 75px;
+	font-weight: 700;
+	margin-top: -71px;
+	z-index: -28;
+
+}
+.turn{
+	transform:rotateZ(4320deg);
+	-moz-transform:rotateZ(4320deg);
+	-ms-transform:rotateZ(4320deg);
+	-webkit-transform:rotateZ(4320deg);
+	-o-transform:rotateZ(4320deg);
+	transition: all 2s ease-in-out;
+	-moz-transition: all 2s ease-in-out;
+	-ms-transition: all 2s ease-in-out;
+	-webkit-transition: all 2s ease-in-out;
+	-o-transition: all 2s ease-in-out;
+}
+.aqua{
+	background: #3baab3 !important;
+}
+.gold{
+	background-color: #c2a81c !important;
+}
+.usd-value{
+	font-size: 40px;
+}
+.wrapper{
+	margin-bottom: 5%;
+}
+.progress .indeterminate {
+    background-color: orange;
+}
+.no-shadow{
+	box-shadow: none;
+	background-color: #f5f8fa;
+}
+.progress{
+	background-color: gold;	
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+a:hover, a:focus, a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+nav{
+	background-color: #673BB7;
+}
+.page-footer {
+	padding-top: 0px;
+	background-color: #673BB7;
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+}
+.btn:hover{
+	color: #fff;
+}
+.side-nav.fixed {
+	padding:0px;
+}
+.padding-2{
+	padding: 7px
+}
+.overlay{
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(103, 59, 183, 0.46);
+	/* background: rgba(255, 255, 183, 0.46); */
+	/* background: rgba(0, 0, 0, 0.46); */
+}
+.overlay-white{
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 245, 255,0.57);;
+}
+.ajax-load{
+	position: absolute;
+	z-index: 1000;
+	margin: 20% 55%;
+}
+header, main, footer {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+	.ajax-load{
+		margin: 30% 45%;
+	}
+}
+@media only screen and (max-width : 500px) {
+	.ajax-load{
+		margin: 50% 45%;
+	}
+}
+.login{
+	position: absolute;
+	margin-top: 4%;
+}
+.auth-logo{
+	display: block;
+	width: 73px;
+	height: 73px;
+	border-radius: 100%;
+	color: #fff;
+	background: #673BB7;
+	z-index: 1000;
+	position: absolute;
+	font-size: x-small;
+	float: right;
+	right: 10px;
+	bottom: 10px;
+	padding: 26px 0px 3px 1px;
+	text-align: center;
+	font-weight: 600;
+}
+.notify-icon{
+    font-size: 46px;
+	line-height: 79px;
+	width: 74px;
+	height: 74px;
+    max-width: 130px;
+    max-height: 130px;
+    margin: -103px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    background: #3fc1a5;
+	text-align: center;
+	top:-20px;
+}
+.bar-code{
+	overflow: hidden;
+}
+.bar-code img{
+	width: 40%;
+}
+.user-info{
+
+}
+a{
+	color: #fff;
+}

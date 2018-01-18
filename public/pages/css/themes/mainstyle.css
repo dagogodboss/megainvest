@@ -1,0 +1,30 @@
+.white{
+	color: #fff !important;
+}
+.header{
+	background: #006DE4;
+}
+.header a {
+	color: #fff !important;
+}
+.header a:hover{
+	color: #fff !important;
+	opacity: 0.7;
+}
+.header span{
+	color: #fff;
+}
+.header .text-master{
+	color: #fff !important;
+}
+.brand{
+	color: #fff;
+}
+.site-name{
+	color: #2B1CF1;
+	font-size: 20px;
+	font-weight: bolder;
+}
+.link-color{
+	color: #30DB14 !important;
+}

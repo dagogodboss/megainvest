@@ -1,0 +1,23 @@
+.customize-nav{
+  background-color: rgb(48, 104, 88);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 600px;
+}
+
+//// Drop down menu
+.dropdown-menu {
+  background-color: $main-color;
+  > li {
+    > a {
+      color: set-text-color($main-color);
+      &:hover,  &:focus {
+        color: set-text-color($main-color);
+        background-color: darken($main-color, 5%);
+      }
+    }
+    > .divider {
+        background-color: $main-color;
+    }
+  }
+}
