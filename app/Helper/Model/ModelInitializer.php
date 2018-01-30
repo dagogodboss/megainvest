@@ -3,28 +3,24 @@
 namespace App\Helper\Model;
 
 use App\User;
-/*use App\EmailMagicToken;
-use App\Admin\Trade\Currency;
-use App\Auth\PhoneMagicToken;
-use App\User\Trade\BuyCurrency;*/
+use App\Site\Currency;
+use App\User\Trade\InternalTrade;
 
 class ModelInitializer
 {
-	protected $user/*, $emailtoken, $phonetoken, $buy, $currency*/; 
+	protected $user, $emailtoken, $phonetoken, $buy, $currency, $trade; 
 
 	public function __construct(){
 		$this->user = new User();
-		/*$this->emailtoken = new EmailMagicToken();
-		$this->phonetoken = new PhoneMagicToken();
 		$this->currency   = new Currency();
-		$this->buy        = new BuyCurrency();*/
+		$this->trade = new InternalTrade();
 	}
 
 	public function user() {
 		return $this->user;
 	}
 
-	/*public function emailtoken(){
+	public function emailtoken(){
 		return $this->emailtoken;
 	}
 
@@ -36,7 +32,8 @@ class ModelInitializer
 		return $this->currency;
 	}
 
-	public function buy(){
-		return $this->buy;
-	}*/
+	public function trade(){
+		return $this->trade;
+	}
+
 }

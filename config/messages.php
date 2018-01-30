@@ -18,5 +18,7 @@ return[
 	'ptokensent' 		=> 'Phone token sent',
 	'resend_email' 		=> 'Your email validation link has been sent to your email address. if you did not receive it, please change your email address using the form below.',
 	'buy'	 			=> ' Please select your payment option',
-	'verify_phone'	 	=> 'Verify your phone number.' 
+	'verify_phone'	 	=> 'Verify your phone number.' ,
+	'walletTextOne'		=> ' Your Bitcoin Wallet and Ether Wallet which is also ERC20 compatible  has been crated successfully. Below are the Details. ',
+	'walletclosing'		=> ' Please keep your details securely, as we did not save any of your wallet details on our server except the Addresses',
 ];

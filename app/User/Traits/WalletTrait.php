@@ -2,6 +2,7 @@
 	
 namespace App\User\Traits;
 
+use App\Notifications\Wallet\EmailWalletDetails;
 
 trait  WalletTrait
 {
@@ -28,7 +29,23 @@ trait  WalletTrait
 
 	public function setWalllet(){
 		$this->createbitcoinwallet();
+		$this->createEtherWallet();
+		$this->createusdwallet();
+		//emailUserhisDetails();
 		return $this;
+	}
+
+	public function createEtherWallet(){
+		$request = sitefunc()->curl()->get(api('ether-link'));
+		$this->notify(new EmailWalletDetails($this, $this->bitcoin_account(), json_decode($request)));
+		return $this->save_ether_wallet($request);
+	}
+
+	public function createusdwallet(){
+		$this->usd_wallets()->create([
+			'account_uuid' 	=> $this->getUSDAccount(),
+			'balance'		=> 0,
+		]);
 	}
 
 	public function createbitcoinwallet(){
@@ -36,9 +53,17 @@ trait  WalletTrait
 					->getWithData(
 						api('bitcoin_create'), $this->bitcoin_parametrs()
 					);
-		;
 		$this->save_wallet($request, $this->getqrcode($request));
 	} 
+
+	public function save_ether_wallet($data){
+		$this->crypto_wallets()->create([
+			'account_uuid' 	=> json_decode($data)->address,
+			'balance' 		=> '0',
+		]);
+		$wallet_file = file_put_contents($this->phone_number.'etherwallet.txt', $data);
+		return $this->phone_number.'etherwallet.txt';
+	}
 
 	private function getqrcode($data){
 		$add = json_decode($data)->address;
@@ -63,7 +88,6 @@ trait  WalletTrait
 		$response = sitefunc()->curl()->postJsonData(api('btc_info'), [
 			'redeemcode' => $param,
 		]);
-		dd($response);
 		return $response;
 	}
 
@@ -71,6 +95,10 @@ trait  WalletTrait
 		return [
 			'confirmations' => 1,
 		];
+	}
+
+	public function get_btc_transaction(){
+		
 	}
 }	
 

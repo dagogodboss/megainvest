@@ -11,63 +11,72 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/wallet_details', 'WalletsController@index');
 
-//Route::middleware(['web', /*'auth'*/])->group(function () { 
 
-//    Auth::routes();
-//
-//    Route::get('/', 'IndexController@index')->name('index');
-//
-//    Route::middleware(['auth'])->group(function (){
-//	    Route::get('/home', 'HomeController@index')->name('home');
-//	});
-//
-//    Route::group(['namespace' => 'Auth'], function(){
-//	    // Controllers Within The "App\Http\Controllers\Auth" Namespace
-//	});
 
-//});
+Route::middleware(['web', /*'auth'*/])->group(function () { 
 
-// Route::middleware(['web', /*'auth'*/])->group(function () {
+   Auth::routes();
 
-// 	Route::prefix('lending')->group(function () {
-//     	Route::get('/', 'LendingController@index')->name('lending');
-// 	});
+   Route::get('/', 'IndexController@index')->name('index');
 
-// 	Route::prefix('dashboard')->group(function () {
-//     	Route::get('/', 'DashboardController@index')->name('dashboard');
-// 	});
+   Route::middleware(['auth'])->group(function (){
+	    Route::get('/home', 'HomeController@index')->name('home');
+	});
 
-// 	Route::prefix('transfer')->group(function () {
-//     	Route::get('/', 'TransferController@index')->name('transfer');
-//     	Route::post('/', 'TransferController@processDepositRequest');
-// 	});
+   Route::group(['namespace' => 'Auth'], function(){
+	    // Controllers Within The "App\Http\Controllers\Auth" Namespace
+	});
 
-// 	Route::prefix('exchange')->group(function () {
-//     	Route::get('/', 'ExchangeController@index')->name('exchange');
-// 	});
+});
 
-// 	Route::prefix('wallets')->group(function () {
-//     	Route::get('/', 'WalletsController@index')->name('wallets');
-// 	});
+Route::middleware(['web', /*'auth'*/])->group(function () {
+
+	Route::prefix('lending')->group(function () {
+    	Route::get('/', 'LendingController@index')->name('lending');
+	});
+
+	Route::prefix('dashboard')->group(function () {
+    	Route::get('/', 'DashboardController@index')->name('dashboard');
+	});
+
+	Route::prefix('transfer')->group(function () {
+    	Route::get('/', 'TransferController@index')->name('transfer');
+    	Route::post('/', 'TransferController@processDepositRequest');
+	});
+
+	Route::prefix('exchange')->group(function () {
+    	Route::get('/', 'ExchangeController@index')->name('exchange');
+	});
+
+	Route::prefix('wallets')->group(function () {
+    	Route::get('/', 'WalletsController@index')->name('wallets');
+	});
 
 	Route::prefix('profile')->group(function () {
     	Route::get('/', 'ProfileController@index')->name('profile');
     	Route::get('/details', 'ProfileController@index')->name('profile-details');
 	});
 
-//     Route::prefix('settings')->group(function () {
-//         Route::get('/', 'SettingsController@index')->name('settings');
-//     });
+    Route::prefix('settings')->group(function () {
+        Route::get('/', 'SettingsController@index')->name('settings');
+    });
 
-//     Route::prefix('_auth')->group(function () {
-// //        dd("here");
-//         Route::get('/', 'UserController@isAuth')->name('auth');
-//         Route::get('user', 'UserController@userData')->name('auth-user');
-//     });
+    Route::prefix('_auth')->group(function () {
+//        dd("here");
+        Route::get('/', 'UserController@isAuth')->name('auth');
+        Route::get('user', 'UserController@userData')->name('auth-user');
+    });
 
-// });
+    Route::prefix('/user')->group(function () {
+        Route::get('/wallet_details', 'WalletsController@index');
+        Route::get('/trade', 'User\Trade\TradeController@index');
+        Route::get('/profile', 'User\UserProfile@show_profile')->name('profile');
+        Route::get('/settings', 'User\UserProfile@show_settings')->name('settings');
+        Route::get('/wallet', 'User\Wallet\WalletController@show_wallet')->name('wallet');
+    });
+
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -78,7 +87,13 @@ Route::get('/hello', 'User\Wallet\WalletController@wallet');
 Auth::routes();
 
 
-Route::get('send', 'Auth\LoginController@send');
+Route::get('send', function(){
+   return LogUser()->sendToken('Hello');
+});
+
+Route::get('email', function(){
+   return LogUser()->setWalllet();
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -95,10 +110,9 @@ Route::get('removepass', 'User\Security@remove_password');
 Route::get('/user/{user}', 'Auth\VerifyEmail@account_details');
 Route::get('change','User\UserProfile@change_stage')->name('change');
 Route::get('with_pass/{password}', 'User\Security@withdraw_password');
-//Route::get('profile', 'User\UserProfile@show_profile')->name('profile');
-Route::get('settings', 'User\UserProfile@show_settings')->name('settings');
 Route::get('/verify-email/{token}/{user}', 'Auth\VerifyEmail@verify_email');
-Route::get('wallet', 'User\Wallet\WalletController@show_wallet')->name('wallet');
+
+
 
 /*User post Link*/
 Route::post('/verify', 'Auth\VerifyEmail@verify_phone')->name('verify');
@@ -119,5 +133,9 @@ Route::get('site-notice', function(){
 
 Route::get('log/{id}', function($id){
     Auth::loginUsingId($id);
+});
+
+Route::get('usd', function(){
+    Auth::user()->createusdwallet();
 });
 

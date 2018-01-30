@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.bladelayout')
 @push('after-style')
 	<style type="text/css">
 		.margin-2{
@@ -29,8 +29,8 @@
 					</h3>
 				</div>
 				<div class="col-md-4">
-					<button class="auth btn btn-cons @if(LogUser()->tfa_security) dtwa btn-danger @else twa btn-complete @endif ">
-						@if(LogUser()->tfa_security) De-Activate @else Activate @endif
+					<button class="auth btn btn-cons @if(LogUser()->hasTwoWayAuth()) dtwa btn-danger @else twa btn-complete @endif ">
+						@if(LogUser()->hasTwoWayAuth()) De-Activate @else Activate @endif
 					</button> 
 				</div>
 			</div>

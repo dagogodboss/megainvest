@@ -12,4 +12,8 @@ return [
 	'qrcode_link'    => 'https://bitaps.com/api/qrcode/',
 	'bitcoin_create' => 'https://bitaps.com/api/create/redeemcode',
 	'btc_info'		 => 'https://bitaps.com/api/get/redeemcode/info',
+	'btc_transaction'=> 'https://bitaps.com/api/address/transactions', 
+
+	//Ethereum Api
+	'ether-link'	=> 'http://127.0.0.1:3000',
 ];

@@ -1,0 +1,1 @@
+{"privateKey":"0x0e2a7d19c1eeca16fa0db2bf4e66914d438ea74998a5f070683402b4a664c040","defaultGasLimit":1500000,"address":"0xf53F331069b2B1319468C0Afdb2A55Ee35A49434","mnemonic":"eight harsh unlock bunker slab exercise damp awesome purpose pizza already abandon","path":"m/44'/60'/0'/0/0"}

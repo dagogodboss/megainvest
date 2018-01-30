@@ -1,0 +1,22 @@
+@page{
+	size:landscape;
+}
+.highcharts-credits{
+  display: none;
+}
+/* @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  html{
+    padding-top: 120px;
+  }
+  .page-container {
+    transform: rotate(90deg);
+    transform-origin: right top;
+    width: 100vh;
+    height: 150vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+} */

@@ -9,22 +9,22 @@ use App\Authenticator\AuthTrait\AuthTrait;
 
 class VerifyEmail extends Controller
 {
-	 use AuthTrait;
+     use AuthTrait;
 
     protected function verify_email(Request $request){
-    	foreach(model()->user()->all() as $user){
-    		if(hashThis($user->id) == $request->user):
-    			if($user->validateEmail()):
-    					if($this->LoginUser($user)):
-    						$user->storeToken()->sendToken($user->userPhoneToken());
-    						return redirect('site-notice')->with( 'verify_phone', message('verify_phone'));
-    					endif;
-    				else:
-    					return redirect('site-notice')->with('error', message('wrong_token'));
+        foreach(model()->user()->all() as $user){
+            if(hashThis($user->id) == $request->user):
+                if($user->validateEmail()):
+                        if($this->LoginUser($user)):
+                            $user->storeToken()->sendToken($user->userPhoneToken());
+                            return redirect('site-notice')->with( 'verify_phone', message('verify_phone'));
+                        endif;
+                    else:
+                        return redirect('site-notice')->with('error', message('wrong_token'));
                     endelse;
-    			endif;
-    		endif;
-    	}
+                endif;
+            endif;
+        }
     }
 
 

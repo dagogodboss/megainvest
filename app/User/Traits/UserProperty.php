@@ -88,7 +88,7 @@ trait UserProperty{
     }
 
     public function generateToken(){
-		return rand(00000, 999999);
+		return rand(000000, 999999);
 	}
 
 	public function formatPhone(){
@@ -145,10 +145,6 @@ trait UserProperty{
 		$this->account_details()->create([
 			'account_address' => $btc,
 			'currency_id' 	  => 1, 
-		]);
-		$this->account_details()->create([
-			'account_address' => $this->getUSDAccount(),
-			'currency_id' 	  => 2,
 		]);
 		return $this;
 	}

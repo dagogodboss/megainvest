@@ -24,7 +24,7 @@
 					<span class="icon-thumbnail"><i data-feather="grid"></i></span>
 			</li>
 			<li class="">
-				<a href="@#" class="inactive" >
+				<a href="{{ url('/trade')}}" >
 					<span class="title">Exchanger</span>
 				</a>
 			<span class="icon-thumbnail"><i data-feather="bar-chart"></i></span>

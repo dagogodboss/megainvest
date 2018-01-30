@@ -2,9 +2,6 @@
 	<a href="#" class="btn-link toggle-sidebar hidden-lg-up pg pg-menu" data-toggle="sidebar">
 	</a>
 	<div class="">
-		<div class="brand inline">
-			<big>{{ app_name() }}</big>
-		</div>
 		<a href="#" class="btn btn-link text-primary m-l-20 hidden-md-down">
 			<big>
 				{{ app_name() }}

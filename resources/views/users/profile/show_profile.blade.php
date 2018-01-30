@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.bladelayout')
 
 @section('content')
 	<div class="container-fluid p-t-30 p-b-30 ">
@@ -17,8 +17,7 @@
 									You Joined on {{ LogUser()->created_at }}
 								</p>
 								<p class="hint-text m-t-5 small">
-								<<?php /*	{{-- LogUser()->country_code->country --}} */ ?>
-									| Account 
+									{{ LogUser()->country_code->country }} | Account 
 							<i class="fa fa-check-circle text-success fs-16 m-t-10"></i> Verified
 								</p>
 						</div>
@@ -34,10 +33,10 @@
 					<div class="bg-white m-t-25 p-t-5 p-l-15 p-b-5 p-r-15 text-master">
 						<big>
 							<small>
-							<<?php /*	{{ LogUser()->account_details->account_address }}*/ ?>
+								{{ LogUser()->account_details->account_address }}
 							</small>
 							<small class="pull-right">
-							<<?php /*	{{ LogUser()->account_details->balance }}*/ ?>
+								{{ LogUser()->account_details->balance }}
 							</small>
 						</big>
 						<div class="clearfix"></div>
@@ -50,10 +49,10 @@
 					<div class="bg-white m-t-25 p-t-5 p-l-15 p-b-5 p-r-15 text-master">
 						<big>
 							<small>
-							<<?php /*	{{ LogUser()->account_details->account_address }}*/ ?>
+								{{ LogUser()->account_details->account_address }}
 							</small>
 							<small class="pull-right">
-							<<?php /*	{{ LogUser()->account_details->balance }}*/ ?>
+								{{ LogUser()->account_details->balance }}
 							</small>
 						</big>
 						<div class="clearfix"></div>
@@ -66,10 +65,10 @@
 					<div class="bg-white m-t-25 p-t-5 p-l-15 p-b-5 p-r-15 text-master">
 						<big>
 							<small>
-							<<?php /*	{{ LogUser()->account_details->account_address }}*/ ?>
+								{{ LogUser()->account_details->account_address }}
 							</small>
 							<small class="pull-right">
-							<<?php /*	{{ LogUser()->account_details->balance }}*/ ?>
+								{{ LogUser()->account_details->balance }}
 							</small>
 						</big>
 						<div class="clearfix"></div>
@@ -82,10 +81,10 @@
 					<div class="bg-white m-t-25 p-t-5 p-l-15 p-b-5 p-r-15 text-master">
 						<big>
 							<small>
-							<<?php /*	{{ LogUser()->usd_account()->account_address }}*/ ?>
+								{{ LogUser()->usd_account()->account_address }}
 							</small>
 							<small class="pull-right">
-							<<?php /*	{{ LogUser()->usd_account()->balance }}*/ ?>
+								{{ LogUser()->usd_account()->balance }}
 							</small>
 						</big>
 						<div class="clearfix"></div>
@@ -107,7 +106,7 @@
 							{{ LogUser()->email }}
 						</h5>
 						<h2 class="text-master m-t-25 m-b-15"> 
-						<<?php /*	{{  LogUser()->country_code->code.LogUser()->phone_number }}*/ ?>
+							{{  LogUser()->country_code->code.LogUser()->phone_number }}
 						</h2>
 					</div>
 					<div class="card-footer">
